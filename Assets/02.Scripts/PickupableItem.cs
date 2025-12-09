@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemColor
-{
-    RED,
-    BLUE,
-    GREEN,
-    YELLOW,
-}
-
 public class PickupableItem : MonoBehaviour, IInteractable
 {
     public ObjectData objectData;
@@ -40,17 +32,17 @@ public class PickupableItem : MonoBehaviour, IInteractable
     }
 
     // memo : Beacon의 ChangeColor코드와 중복이다. 상속받아서 쓰는 것이 나을 듯 한데..Item, 혹은 Object라는 클래스를 만들어 상속받는게 좋지 않을까?
-    private Color ChangeColor(ItemColor itemColor)
+    private Color ChangeColor(ObjectColor itemColor)
     {
         switch (itemColor)
         {
-            case ItemColor.RED:
+            case ObjectColor.RED:
                 return Color.red;
-            case ItemColor.BLUE:
+            case ObjectColor.BLUE:
                 return Color.blue;
-            case ItemColor.GREEN:
+            case ObjectColor.GREEN:
                 return Color.green;
-            case ItemColor.YELLOW:
+            case ObjectColor.YELLOW:
                 return Color.yellow;
             default:
                 return Color.white;

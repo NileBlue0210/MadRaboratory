@@ -31,13 +31,13 @@ public class Beacon : MonoBehaviour, IInteractable
         {
             if (ReceiveItem(item))
             {
-                item.OnPlace(); // ¾ÆÀÌÅÛÀÌ ºñÄÜ¿¡ ¹èÄ¡µÇ¾úÀ» ¶§, ¾ÆÀÌÅÛ ÀÛµ¿ ¸Þ¼Òµå È£Ãâ
+                item.OnPlace(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¿ï¿½ ï¿½ï¿½Ä¡ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ ï¿½Þ¼Òµï¿½ È£ï¿½ï¿½
                 GameManager.Instance.ReportBeaconActivated(true);
                 ActivateGimmick();
             }
             else
             {
-                Debug.Log("¿Ã¹Ù¸¥ Å° ¾ÆÀÌÅÛÀÌ ¾Æ´Õ´Ï´Ù.");
+                Debug.Log("ï¿½Ã¹Ù¸ï¿½ Å° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Õ´Ï´ï¿½.");
             }
         }
     }
@@ -48,14 +48,14 @@ public class Beacon : MonoBehaviour, IInteractable
 
         if (item != null)
         {
-            isActivated = false; // ºñÈ°¼ºÈ­ »óÅÂ·Î º¯°æ
+            isActivated = false; // ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
             GameManager.Instance.ReportBeaconActivated(false);
             ActivateGimmick();
         }
     }
 
     /// <summary>
-    /// ¾ÆÀÌÅÛÀÌ ºñÄÜ¿¡ ¹èÄ¡µÇ¾úÀ» ¶§, ¿Ã¹Ù¸¥ »óÈ£ÀÛ¿ë ¾ÆÀÌÅÛÀÎÁö »ö»óÀ» ÅëÇØ ÆÇº°
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¿ï¿½ ï¿½ï¿½Ä¡ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½Ã¹Ù¸ï¿½ ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Çºï¿½
     /// </summary>
     /// <param name="item"></param>
     /// <returns></returns>
@@ -74,9 +74,9 @@ public class Beacon : MonoBehaviour, IInteractable
     }
     
     /// <summary>
-    /// ºñÄÜ°ú ¿¬°áµÈ ±â¹ÍÀ» µ¿ÀÛ½ÃÅ°´Â ¸Þ¼Òµå
+    /// ï¿½ï¿½ï¿½Ü°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û½ï¿½Å°ï¿½ï¿½ ï¿½Þ¼Òµï¿½
     /// </summary>
-    /// memo : ¿¬°áµÈ ±â¹ÍÀ» ºñÄÜ¿¡ ¿¬°á½ÃÅ³ ÇÊ¿ä°¡ ÀÖ´Ù. ÇöÀç´Â ¿¬°áµÇ¾î ÀÖÁö ¾ÊÀ½
+    /// memo : ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ü¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å³ ï¿½Ê¿ä°¡ ï¿½Ö´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private void ActivateGimmick()
     {
         if (isActivated && beaconActivate != null)
@@ -91,18 +91,18 @@ public class Beacon : MonoBehaviour, IInteractable
         }
     }
 
-    // memo : PickupableItemÀÇ ChangeColorÄÚµå¿Í Áßº¹ÀÌ´Ù. »ó¼Ó¹Þ¾Æ¼­ ¾²´Â °ÍÀÌ ³ªÀ» µí ÇÑµ¥..Item, È¤Àº Object¶ó´Â Å¬·¡½º¸¦ ¸¸µé¾î »ó¼Ó¹Þ´Â°Ô ÁÁÁö ¾ÊÀ»±î?
-    private Color ChangeColor(ItemColor itemColor)
+    // memo : PickupableItemï¿½ï¿½ ChangeColorï¿½Úµï¿½ï¿½ ï¿½ßºï¿½ï¿½Ì´ï¿½. ï¿½ï¿½Ó¹Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñµï¿½..Item, È¤ï¿½ï¿½ Objectï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ó¹Þ´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
+    private Color ChangeColor(ObjectColor itemColor)
     {
         switch (itemColor)
         {
-            case ItemColor.RED:
+            case ObjectColor.RED:
                 return Color.red;
-            case ItemColor.BLUE:
+            case ObjectColor.BLUE:
                 return Color.blue;
-            case ItemColor.GREEN:
+            case ObjectColor.GREEN:
                 return Color.green;
-            case ItemColor.YELLOW:
+            case ObjectColor.YELLOW:
                 return Color.yellow;
             default:
                 return Color.white;

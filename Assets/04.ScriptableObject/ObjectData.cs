@@ -14,7 +14,7 @@ public class ObjectData : ScriptableObject
 {
     public string objectID;
     public string objectName;
-    public ItemColor objectColor;
+    public ObjectColor objectColor;
     public string description;
 
 #if UNITY_EDITOR
