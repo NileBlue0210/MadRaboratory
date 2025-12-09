@@ -38,11 +38,11 @@ public class KeyItem : InteractableObject
 
     private void OnCollisionEnter(Collision collision)
     {
-        Beacon beacon = collision.gameObject.GetComponent<Beacon>();
+        BeaconObject beacon = collision.gameObject.GetComponent<BeaconObject>();
 
         if (beacon != null)
         {
-            Debug.Log("열쇠 아이템이 비콘과 충돌했습니다.");
+            beacon.OpenDoor();
         }
     }
 }

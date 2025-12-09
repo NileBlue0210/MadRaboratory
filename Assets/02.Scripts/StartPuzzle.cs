@@ -8,6 +8,5 @@ public class StartPuzzle : MonoBehaviour
     public void LoadPuzzleScene()
     {
         SceneManager.LoadScene("PuzzleScene", LoadSceneMode.Additive);
-
     }
 }

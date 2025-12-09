@@ -22,9 +22,9 @@ public class PuzzleManager : MonoBehaviour
 
     private bool isClear = false;
 
-    public PuzzleLight[] getPuzzles; // PuzzleLightÀ» °¡Áö°í ÀÖ´Â ÀÚ½Ä ¿ÀºêÁ§Æ®¸¦ ´ã±â À§ÇÑ ¹è¿­
+    public PuzzleLight[] getPuzzles; // PuzzleLightï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
 
-    public PuzzleLight[,] puzzles = new PuzzleLight[5,5]; // À§ ¹è¿­ ¾ÈÀÇ ¿ÀºêÁ§Æ®¸¦ ÆÛÁñÀÇ ÇüÅÂ·Î ´ã±â À§ÇÑ ¹è¿­
+    public PuzzleLight[,] puzzles = new PuzzleLight[5,5]; // ï¿½ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
 
     public Door door;
 
@@ -39,7 +39,7 @@ public class PuzzleManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        getPuzzles = GetComponentsInChildren<PuzzleLight>(); // Ã³À½ºÎÅÍ 2Â÷¿ø ¹è¿­¿¡ ´ãÀ» ¼ö ¾ø¾î ¿ì¼± 1Â÷¿ø ¹è¿­¿¡ ÇÒ´ç
+        getPuzzles = GetComponentsInChildren<PuzzleLight>(); // Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼± 1ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Ò´ï¿½
 
         
     }
@@ -50,7 +50,7 @@ public class PuzzleManager : MonoBehaviour
         Cursor.visible = true;
 
         int k = 0;
-        // 1Â÷¿ø ¹è¿­¿¡ ´ã±ä ÀÚ½Äµé(¶óÀÌÆ®)À» 2Â÷¿ø ¹è¿­·Î ¿Å±è
+        // 1ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ú½Äµï¿½(ï¿½ï¿½ï¿½ï¿½Æ®)ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ï¿½ï¿½ ï¿½Å±ï¿½
         for (int i = 0; i< 5; i++)
         {
             for (int j = 0; j < 5; j++)
@@ -69,15 +69,15 @@ public class PuzzleManager : MonoBehaviour
     }
 
 
-    public void TurnSideLights(PuzzleLight puzzle) // Å¬¸¯ÇÑ ¶óÀÌÆ®ÀÇ ¾ç¿· ¹× À§¾Æ·¡µµ Å°°Å³ª ²ô´Â ¸Þ¼­µå
+    public void TurnSideLights(PuzzleLight puzzle) // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ç¿· ï¿½ï¿½ ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ Å°ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     {
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
             {
-                if (puzzles[i, j] == puzzle) // Å¬¸¯ÇÑ ÆÛÁñÀÇ À§Ä¡¸¦ Ã£À½
+                if (puzzles[i, j] == puzzle) // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ Ã£ï¿½ï¿½
                 {
-                    // Å¬¸¯ÇÑ ÆÛÁñÀÇ ¾ç¿· ¹× À§¾Æ·¡¿¡ ¶óÀÌÆ®°¡ ÀÖÀ» °æ¿ì ²ô°Å³ª Å´
+                    // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç¿· ï¿½ï¿½ ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½ Å´
                     TurnOnOff(i + 1, j);
                     TurnOnOff(i - 1, j);
                     TurnOnOff(i , j + 1);
@@ -87,7 +87,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    void TurnOnOff(int i, int j) // ¶óÀÌÆ® ¿Â¿ÀÇÁ ±â´É ¸Þ¼­µå
+    void TurnOnOff(int i, int j) // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     {
         if(i >= 0 && i < 5 && j >= 0 && j < 5)
         {
@@ -98,7 +98,7 @@ public class PuzzleManager : MonoBehaviour
     }
 
 
-    public bool CheckPuzzleClear() // ÆÛÁñ Å¬¸®¾î ¸Þ¼­µå
+    public bool CheckPuzzleClear() // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     {
         bool isAllOn = true;
 
@@ -106,7 +106,7 @@ public class PuzzleManager : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                // ¶óÀÌÆ®Áß ÇÏ³ª¶óµµ ²¨Á®ÀÖÀ¸¸é Å¬¸®¾î ¾ÈµÊ ÆÇÁ¤
+                // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ ï¿½ï¿½ï¿½ï¿½
                 if (puzzles[i, j].isLightON == false)
                 {
                     isAllOn = false;
@@ -125,15 +125,15 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    public void ClearedPuzzle() // ÆÛÁñÀ» Å¬¸®¾îÇÏ¸é ¹®ÀÌ ¿­¸®´Â ¸Þ¼­µå
+    public void ClearedPuzzle() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
     {
         isClear = true;
-        GameManager.Instance.PuzzleSolved("GasRoom_Puzzle1"); // ÆÛÁñ Å¬¸®¾î »óÅÂ¸¦ GameManager¿¡ ¾Ë¸²
+        GameManager.Instance.PuzzleSolved("GasRoom_Puzzle1"); // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ GameManagerï¿½ï¿½ ï¿½Ë¸ï¿½
         door = GameManager.Instance.door1Object.GetComponent<Door>();
         door.ActivateBeacon();
-        CharacterManager.Instance.Player.controller.SetPuzzleActive(false);
+        // CharacterManager.Instance.Player.controller.SetPuzzleActive(false);
         SceneManager.UnloadSceneAsync("PuzzleScene");
-        Debug.Log("ÆÛÁñ Å¬¸®¾î! ¹®ÀÌ ¿­¸³´Ï´Ù.");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 
         SoundManager.Instance?.PlaySFX("doorOpenSound");
     }
