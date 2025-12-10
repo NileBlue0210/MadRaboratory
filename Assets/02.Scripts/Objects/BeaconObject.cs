@@ -6,6 +6,7 @@ using UnityEngine;
 public class BeaconObject : InteractableObject
 {
     [SerializeField] private Animator doorAnimator;
+    [SerializeField] private OXPanel panelObject;
 
     protected override void Start()
     {
@@ -22,11 +23,13 @@ public class BeaconObject : InteractableObject
     public void OpenDoor()
     {
         doorAnimator.SetBool("Open", true);
+        panelObject.ShowPanelO();
     }
 
     public void CloseDoor()
     {
         doorAnimator.SetBool("Open", false);
+        panelObject.ShowPanelX();
     }
 
     private void OnCollisionExit(Collision collision)
