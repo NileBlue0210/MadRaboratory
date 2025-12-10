@@ -14,22 +14,16 @@ public class PuzzleObject : MonoBehaviour
 
         if (interactable == null)
             Debug.LogError("Interactable component is not assigned.");
-
-        Debug.Log("퍼즐 오브젝트 활성화됨");
     }
 
     private void OnDisable()
     {
         interactable.selectEntered.RemoveListener(OnSelectEntered);
-
-        Debug.Log("퍼즐 오브젝트 비활성화됨");
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
         LoadPuzzleScene();
-
-        Debug.Log("퍼즐 오브젝트가 선택되었습니다.");
     }
 
     private void LoadPuzzleScene()
