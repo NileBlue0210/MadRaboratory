@@ -16,12 +16,9 @@ public class XRPlayer : MonoBehaviour
 
     private void Awake()
     {
+        PlayerManager.Instance.Player = this;
+
         Controller = GetComponent<XRPlayerController>();// PlayerController 컴포넌트를 가져와서 controller 변수에 할당
         Condition = GetComponent<XRPlayerCondition>();// PlayerCondition 컴포넌트를 가져와서 condition 변수에 할당
-    }
-
-    void Start()
-    {
-
     }
 }

@@ -18,6 +18,10 @@ public class XRPlayerController : MonoBehaviour
     private float jumpCount = 0f;   // 현재 점프 횟수
     [SerializeField] private int maxJumpCount = 2;   // 최대 점프 횟수
 
+    [Header("Dash Variables")]
+    public bool IsRun = false;
+    public bool DashBlocked = false;
+
     void Awake()
     {
         xrPlayer = GetComponent<XRPlayer>();
@@ -56,10 +60,8 @@ public class XRPlayerController : MonoBehaviour
             jumpCount = 0; // 지면에 닿아 있을 때 점프 횟수 초기화
         }
 
-        velocityY += Physics.gravity.y * Time.deltaTime;    // 중력 적용
-
-        Vector3 move = new Vector3(0, velocityY, 0);
-        xrPlayer.CharacterController.Move(move * Time.deltaTime);
+        // 중력 적용
+        SetGravity();
     }
 
     private void OnEnable()
@@ -85,6 +87,14 @@ public class XRPlayerController : MonoBehaviour
         runAction.canceled -= StopRun;
     }
 
+    private void SetGravity()
+    {
+        velocityY += Physics.gravity.y * Time.deltaTime;
+
+        Vector3 move = new Vector3(0, velocityY, 0);
+        xrPlayer.CharacterController.Move(move * Time.deltaTime);
+    }
+
     private void OnJump(InputAction.CallbackContext context)
     {
         if (jumpCount >= maxJumpCount)
@@ -105,10 +115,24 @@ public class XRPlayerController : MonoBehaviour
     private void OnRun(InputAction.CallbackContext context)
     {
         xrPlayer.MoveProvider.moveSpeed += runSpeed;
+        IsRun = true;
     }
 
     private void StopRun(InputAction.CallbackContext context)
     {
         xrPlayer.MoveProvider.moveSpeed = defaultSpeed;
+        IsRun = false;
+    }
+
+    public IEnumerator DashCooldown()
+    {
+        // 대시 상태 종료 및 대시 불가능 상태 설정
+        DashBlocked = true;
+        IsRun = false;
+
+        // 대시 쿨타임
+        yield return new WaitForSeconds(5f);
+
+        DashBlocked = false;
     }
 }

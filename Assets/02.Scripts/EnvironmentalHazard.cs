@@ -23,7 +23,7 @@ public class EnvironmentalHazard : MonoBehaviour
 
     private void Start()
     {
-        oriSpeed = CharacterManager.Instance.Player.controller.moveSpeed;
+        oriSpeed = PlayerManager.Instance.Player.MoveProvider.moveSpeed;
     }
 
 
@@ -33,7 +33,7 @@ public class EnvironmentalHazard : MonoBehaviour
         {
             effectValue = 2.0f;
             player.controller.moveSpeed /= effectValue;
-            Debug.Log($"¼Óµµ °¨¼Ò: {player.controller.moveSpeed}");
+            Debug.Log($"í”Œë ˆì´ì–´ ì†ë„ ê°ì†Œ : {player.controller.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
@@ -60,12 +60,12 @@ public class EnvironmentalHazard : MonoBehaviour
         if (type == HazardType.SLOWING_LIQUID)
         {
             player.controller.moveSpeed = oriSpeed;
-            Debug.Log($"¼Óµµ Á¤»óÈ­: {player.controller.moveSpeed}");
+            Debug.Log($"í”Œë ˆì´ì–´ ì†ë„ ì •ìƒí™” : {player.controller.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
             StopCoroutine(poisoning);
-            Debug.Log($"Áßµ¶ Á¾·á, ÇöÀçÃ¼·Â{player.condition.health}");
+            Debug.Log($"ì¤‘ë… ì§€ì—­ íƒˆì¶œ! í˜„ì¬ í”Œë ˆì´ì–´ ì²´ë ¥ : {player.condition.health}");
         }
         else if (type == HazardType.POISON_POOL)
         {
@@ -77,7 +77,7 @@ public class EnvironmentalHazard : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log($"{damage}¸¸Å­ÀÇ µ¶µ©!");
+            Debug.Log($"{damage}ì˜ ì¤‘ë… ë°ë¯¸ì§€!");
             CharacterManager.Instance.Player.condition.TakePhysicalDamage(damage);
             yield return new WaitForSeconds(2);
         }

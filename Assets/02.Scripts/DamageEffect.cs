@@ -12,7 +12,7 @@ public class DamageEffect : MonoBehaviour
 
     void Start()
     {
-        CharacterManager.Instance.Player.condition.onTakeDamage += Flash;
+        PlayerManager.Instance.Player.Condition.OnTakeDamage += Flash;
     }
 
     public void Flash()
