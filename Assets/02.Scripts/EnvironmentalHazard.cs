@@ -27,13 +27,13 @@ public class EnvironmentalHazard : MonoBehaviour
     }
 
 
-    public void ApplyEffect(Player player)
+    public void ApplyEffect(XRPlayer player)
     {
         if (type == HazardType.SLOWING_LIQUID)
         {
             effectValue = 2.0f;
-            player.controller.moveSpeed /= effectValue;
-            Debug.Log($"플레이어 속도 감소 : {player.controller.moveSpeed}");
+            player.MoveProvider.moveSpeed /= effectValue;
+            Debug.Log($"플레이어 속도 감소 : {player.MoveProvider.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
@@ -55,17 +55,17 @@ public class EnvironmentalHazard : MonoBehaviour
         }
     }
 
-    public void RemoveEffect(Player player)
+    public void RemoveEffect(XRPlayer player)
     {
         if (type == HazardType.SLOWING_LIQUID)
         {
-            player.controller.moveSpeed = oriSpeed;
-            Debug.Log($"플레이어 속도 정상화 : {player.controller.moveSpeed}");
+            player.MoveProvider.moveSpeed = oriSpeed;
+            Debug.Log($"플레이어 속도 정상화 : {player.MoveProvider.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
             StopCoroutine(poisoning);
-            Debug.Log($"중독 지역 탈출! 현재 플레이어 체력 : {player.condition.health}");
+            Debug.Log($"중독 지역 탈출! 현재 플레이어 체력 : {player.Condition.health}");
         }
         else if (type == HazardType.POISON_POOL)
         {
@@ -78,14 +78,14 @@ public class EnvironmentalHazard : MonoBehaviour
         while(true)
         {
             Debug.Log($"{damage}의 중독 데미지!");
-            CharacterManager.Instance.Player.condition.TakePhysicalDamage(damage);
+            PlayerManager.Instance.Player.Condition.TakePhysicalDamage(damage);
             yield return new WaitForSeconds(2);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponent<Player>(); 
+        var player = other.GetComponent<XRPlayer>(); 
         if (player != null)
         {
             ApplyEffect(player);
@@ -95,7 +95,7 @@ public class EnvironmentalHazard : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var player = other.GetComponent<Player>(); 
+        var player = other.GetComponent<XRPlayer>(); 
         if (player != null)
         {
             RemoveEffect(player);

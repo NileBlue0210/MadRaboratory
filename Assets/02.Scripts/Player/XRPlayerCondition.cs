@@ -25,14 +25,15 @@ public class XRPlayerCondition : MonoBehaviour
         if (DieUI != null)
             DieUI.SetActive(false);
 
-        if (healthBar != null)
+        if (healthBar == null || staminaBar == null)
+        {
+            Debug.LogError("HealthBar or StaminaBar is not assigned in XRPlayerCondition.");
+        }
+        else
         {
             healthBar.maxValue = 100;
             healthBar.curValue = health;
-        }
 
-        if (staminaBar != null)
-        {
             staminaBar.maxValue = 100;
             staminaBar.curValue = Stamina;
         }
@@ -40,7 +41,12 @@ public class XRPlayerCondition : MonoBehaviour
 
     void Update()
     {
-        
+        // 체력, 스테미너 게이지 업데이트
+        healthBar.curValue = health;
+        staminaBar.curValue = Stamina;
+
+        // 스테미너 관리
+        StaminaAmountOfChange();
     }
 
     public void TakePhysicalDamage(int damage)
@@ -67,7 +73,7 @@ public class XRPlayerCondition : MonoBehaviour
             {
                 Stamina += staminaRegenPerSec * Time.deltaTime;
             }
-            
+
             Stamina = Mathf.Clamp(Stamina, 0, 100);
         }
     }
