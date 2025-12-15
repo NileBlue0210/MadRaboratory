@@ -28,9 +28,11 @@ public class XRPlayerController : MonoBehaviour
 
         if (xrPlayer.ActionAsset != null)
         {
+            InputActionMap leftHandMap = xrPlayer.ActionAsset.FindActionMap("XRI LeftHand Interaction");
             InputActionMap rightHandMap = xrPlayer.ActionAsset.FindActionMap("XRI RightHand Interaction");
+
+            runAction = leftHandMap.FindAction("Run");
             jumpAction = rightHandMap.FindAction("Jump");
-            runAction = rightHandMap.FindAction("Run");
         }
         else
         {
@@ -114,6 +116,9 @@ public class XRPlayerController : MonoBehaviour
 
     private void OnRun(InputAction.CallbackContext context)
     {
+        if (DashBlocked)
+            return;
+
         xrPlayer.MoveProvider.moveSpeed += runSpeed;
         IsRun = true;
     }
@@ -129,6 +134,7 @@ public class XRPlayerController : MonoBehaviour
         // 대시 상태 종료 및 대시 불가능 상태 설정
         DashBlocked = true;
         IsRun = false;
+        xrPlayer.MoveProvider.moveSpeed = defaultSpeed;
 
         // 대시 쿨타임
         yield return new WaitForSeconds(5f);
