@@ -36,7 +36,7 @@ Shader "UI/AlwaysVisible"
         Cull Off
         Lighting Off
         ZWrite Off
-        ZTest Always  // <--- 핵심: 깊이 검사를 무시하고 무조건 그립니다!
+        ZTest Always
         Blend SrcAlpha OneMinusSrcAlpha
         ColorMask [_ColorMask]
 
