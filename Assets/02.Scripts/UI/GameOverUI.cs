@@ -23,9 +23,8 @@ public class GameOverUI : MonoBehaviour
     public void ShowGameOver(string reason)
     {
         gameOverPanel.SetActive(true);
-        gameOverText.text = $"°ÔÀÓ ¿À¹ö\n({reason})";
+        gameOverText.text = $"ê²Œìž„ ì˜¤ë²„!\n({reason})";
 
-        // Ä¿¼­ Ç¥½Ã ¹× Àá±Ý ÇØÁ¦
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -44,6 +43,6 @@ public class GameOverUI : MonoBehaviour
     private void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("LobbyScene"); //¿©±â¿¡ ·Îºñ ¾À ÀÌ¸§ Á¤È®È÷ ÀÔ·Â
+        SceneManager.LoadScene("LobbyScene"); //ï¿½ï¿½ï¿½â¿¡ ï¿½Îºï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½Ô·ï¿½
     }
 }
