@@ -8067,8 +8067,8 @@ MonoBehaviour:
   Stamina: 100
   staminaDecreasePerSec: 20
   staminaRegenPerSec: 10
-  healthBar: {fileID: 969127312}
-  staminaBar: {fileID: 969127311}
+  healthBar: {fileID: 1588045029508080685}
+  staminaBar: {fileID: 8484375598479039804}
   DieUI: {fileID: 2036663547}
 --- !u!114 &663843381
 MonoBehaviour:
@@ -11792,28 +11792,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 976795451}
   m_SourcePrefab: {fileID: 100100000, guid: 04bb2b5be02107247b0f3eb3927b75cd, type: 3}
---- !u!114 &969127311 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8484375599442010538, guid: 04bb2b5be02107247b0f3eb3927b75cd, type: 3}
-  m_PrefabInstance: {fileID: 969127310}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221cd2711a1592f49bc86527b8772b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &969127312 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1588045028293941435, guid: 04bb2b5be02107247b0f3eb3927b75cd, type: 3}
-  m_PrefabInstance: {fileID: 969127310}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221cd2711a1592f49bc86527b8772b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &970389531
 PrefabInstance:
   m_ObjectHideFlags: 0
