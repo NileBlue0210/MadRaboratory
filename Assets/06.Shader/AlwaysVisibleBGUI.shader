@@ -1,4 +1,4 @@
-Shader "UI/AlwaysVisible"
+Shader "UI/AlwaysVisibleBGUI"
 {
     Properties
     {
@@ -17,7 +17,7 @@ Shader "UI/AlwaysVisible"
     {
         Tags
         {
-            "Queue"="Overlay"
+            "Queue"="Transparent"
             "IgnoreProjector"="True"
             "RenderType"="Transparent"
             "PreviewType"="Plane"

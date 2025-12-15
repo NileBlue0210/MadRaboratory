@@ -53,6 +53,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowStageClearUI()
     {
+        Debug.Log("Show Stage Clear UI");
+
         stageClearUI.gameObject.SetActive(true);
     }
 

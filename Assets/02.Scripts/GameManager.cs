@@ -230,7 +230,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("GameSaveManager.Instance is null. Cannot save game data.");
             return;
         }
-        if (CharacterManager.Instance == null || CharacterManager.Instance.Player == null)
+        if (PlayerManager.Instance == null || PlayerManager.Instance.Player == null)
         {
             Debug.LogError("CharacterManager or Player not found. Cannot save game data.");
             return;

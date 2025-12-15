@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
-    public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverText;
     public Button retryButton;
     public Button quitButton;
 
     private void Start()
     {
-        gameOverPanel.SetActive(false);
+        if (gameObject.activeSelf)
+            gameObject.SetActive(false);
 
         retryButton.onClick.AddListener(RestartGame);
         quitButton.onClick.AddListener(ReturnToMenu);
@@ -22,7 +22,6 @@ public class GameOverUI : MonoBehaviour
 
     public void ShowGameOver(string reason)
     {
-        gameOverPanel.SetActive(true);
         gameOverText.text = $"게임 오버!\n({reason})";
 
         Cursor.visible = true;
