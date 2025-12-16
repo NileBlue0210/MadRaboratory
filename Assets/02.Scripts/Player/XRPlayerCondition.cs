@@ -14,7 +14,6 @@ public class XRPlayerCondition : MonoBehaviour
     [Header("UI Elements")]
     public Condition healthBar;
     public Condition staminaBar;
-    [SerializeField] private GameObject DieUI;
     private bool isDead = false;
 
 
@@ -22,12 +21,11 @@ public class XRPlayerCondition : MonoBehaviour
 
     void Start()
     {
-        if (DieUI != null)
-            DieUI.SetActive(false);
-
         if (healthBar == null || staminaBar == null)
         {
             Debug.LogError("HealthBar or StaminaBar is not assigned in XRPlayerCondition.");
+
+            return;
         }
         else
         {
@@ -41,6 +39,13 @@ public class XRPlayerCondition : MonoBehaviour
 
     void Update()
     {
+        if (!isDead && health <= 0)
+        {
+            Die("Health has dropped to 0!");
+
+            return;
+        }
+
         // 체력, 스테미너 게이지 업데이트
         healthBar.curValue = health;
         staminaBar.curValue = Stamina;
@@ -76,5 +81,14 @@ public class XRPlayerCondition : MonoBehaviour
 
             Stamina = Mathf.Clamp(Stamina, 0, 100);
         }
+    }
+
+    private void Die(string dieReason)
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        GameManager.Instance.GameOver(dieReason);
     }
 }

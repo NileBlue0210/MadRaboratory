@@ -7,15 +7,12 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
-    public TextMeshProUGUI gameOverText;
-    public Button retryButton;
-    public Button quitButton;
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private Button retryButton;
+    [SerializeField] private Button quitButton;
 
     private void Start()
     {
-        if (gameObject.activeSelf)
-            gameObject.SetActive(false);
-
         retryButton.onClick.AddListener(RestartGame);
         quitButton.onClick.AddListener(ReturnToMenu);
     }

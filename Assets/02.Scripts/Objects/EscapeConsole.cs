@@ -29,8 +29,7 @@ public class EscapeConsole : MonoBehaviour
 
     void Start()
     {
-        // TriggerExitDoor(false); // 초기 상태에서는 출구 문이 닫혀있음
-        TriggerExitDoor(true); // 클리어 테스트용 출구 개방 코드
+        TriggerExitDoor(false); // 초기 상태에서는 출구 문이 닫혀있음
     }
 
     void Update()

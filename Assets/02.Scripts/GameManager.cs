@@ -213,10 +213,10 @@ public class GameManager : MonoBehaviour
         // TODO: UI 시스템 담당에게 게임오버 UI 표시 요청
         // if (UIManager.Instance != null) UIManager.Instance.ShowGameOverUI(reason);
         // Time.timeScale = 0f; // 게임 시간을 멈춤 (선택적)
-        GameOverUI ui = FindObjectOfType<GameOverUI>();
-        if (ui != null)
+
+        if (UIManager.Instance != null)
         {
-            ui.ShowGameOver(reason);
+            UIManager.Instance.ShowGameOverUI(reason);
         }
     }
 
@@ -338,5 +338,14 @@ public class GameManager : MonoBehaviour
     public float GetCurrentTimer()
     {
         return currentTimer;
+    }
+
+    public void RetryGame()
+    {
+        // 스테이지 정보 초기화
+        InitializeStage();
+
+        // 현재 씬 다시 로드
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 }
