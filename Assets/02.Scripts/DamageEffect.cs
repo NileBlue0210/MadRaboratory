@@ -35,10 +35,11 @@ public class DamageEffect : MonoBehaviour
     {
         float startAlpha = 0.3f;
         float a = startAlpha;
+        float fadeRate = startAlpha / flashSpeed;
 
         while (a > 0)
         {
-            a-=(startAlpha/flashSpeed)*Time.deltaTime;
+            a -= fadeRate * Time.deltaTime;
             image.color = new Color(1f, 150f/255f, 150f/255f, a);
             yield return null;
         }
