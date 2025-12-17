@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class TutorialUI : MonoBehaviour
 {
-    public TextMeshProUGUI tutorialText;
+    public TextMeshProUGUI tutorialHeaderText;
+    public TextMeshProUGUI tutorialBodyText;
     public GameObject panel;
     public Coroutine tutorialCoroutine;
-    private List<TutorialType> alreadyShownTutorials = new List<TutorialType>(); // ÀÌ¹Ì Ç¥½ÃÇÑ Æ©Åä¸®¾ó ¸®½ºÆ®
+    private List<TutorialType> alreadyShownTutorials = new List<TutorialType>(); // ï¿½Ì¹ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ Æ©ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class TutorialUI : MonoBehaviour
         
     }
 
-    public void ShowTutorial(TutorialType type, string text, float duration)
+    public void ShowTutorial(TutorialType type, string headerText, string bodyText, float duration)
     {
         if (alreadyShownTutorials.Contains(type))
             return;
@@ -35,7 +36,8 @@ public class TutorialUI : MonoBehaviour
             StopCoroutine(tutorialCoroutine);
         }
 
-        tutorialText.text = text;
+        tutorialHeaderText.text = headerText;
+        tutorialBodyText.text = bodyText;
         gameObject.SetActive(true);
 
         tutorialCoroutine = StartCoroutine(DisableTutorialUI(duration));

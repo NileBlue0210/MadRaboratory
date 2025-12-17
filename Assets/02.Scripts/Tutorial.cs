@@ -35,29 +35,35 @@ public class Tutorial : MonoBehaviour
     {
         if (this.GetComponent<Tutorial>() != null) // 튜토리얼 트리거와 충돌했을 때
         {
-            string tutorialText = "";   // 튜토리얼 텍스트
+            string tutorialHeaderText = "";   // 튜토리얼 제목 텍스트
+            string tutorialBodyText = "";   // 튜토리얼 본문 텍스트
             float waitTime = 5f; // UI표시 시간
 
             switch (this.type)
             {
                 case TutorialType.Basic:
-                    tutorialText = "이동: W, A, S, D\r\nL_Click: 상호작용\r\nR_Click: 조사\r\nL_Shift: 달리기\r\nSpace: 점프, 더블 점프";
+                    tutorialHeaderText = "Controlls";
+                    tutorialBodyText = "MOVE: Left Joystick\r\nMOVE VIEW: Right Joystick\r\nRun: Left_PrimaryButton\r\nJUMP: Right_PrimaryButton\r\nINTERACT: Trigger Button";
                     waitTime = 10f;
 
                     break;
                 case TutorialType.Lobby:
-                    tutorialText = "모든 맵의 비콘을 동작시키면 탈출구를 개방할 수 있습니다\r\n모든 맵의 퍼즐을 풀어 탈출하세요";
+                    tutorialHeaderText = "Clear Conditions";
+                    tutorialBodyText = "All beacons must be activated to open the exit door.\r\nSolve all puzzles in each map to escape.";
                     break;
                 case TutorialType.PoisonMap:
-                    tutorialText = "맹독 지역입니다\r\n숨만 쉬어도 체력이 깎여나가며, 맹독 늪에 빠지면 더 많은 체력을 잃습니다";
+                    tutorialHeaderText = "Poisonous Area";
+                    tutorialBodyText = "This is a poisonous area.\r\nHealth decreases continuously, and falling into the poison swamp will cause more damage.";
 
                     break;
                 case TutorialType.PoisonMapPuzzle:
-                    tutorialText = "상호작용을 통해 퍼즐을 풀 수 있습니다\r\n구슬을 클릭하면 십자범위의 구슬색이 변합니다\r\n모든 구슬의 색을 똑같이 바꾸면 성공입니다";
+                    tutorialHeaderText = "Puzzle Gimmick";
+                    tutorialBodyText = "You can solve puzzles by interacting with them.\r\nClicking a ball changes the color of balls in a cross pattern.\r\nChange all balls to the same color to succeed.";
 
                     break;
                 case TutorialType.BeaconGimmick:
-                    tutorialText = "발판을 적절히 움직여 타고 올라가 키 아이템을 손에 넣을 수 있습니다\r\n키 아이템 습득 후, 아이템과 같은 색깔의 비콘에 넣어 맵을 클리어할 수 있습니다";
+                    tutorialHeaderText = "Key Item Acquisition Method";
+                    tutorialBodyText = "You can acquire the key item by moving the platform appropriately and climbing up to it.\r\nAfter acquiring the key item, you can clear the map by placing it in a beacon of the same color as the item.";
                     waitTime = 10f;
 
                     break;
@@ -66,7 +72,7 @@ public class Tutorial : MonoBehaviour
                     break;
             }
 
-            ui.ShowTutorial(type, tutorialText, waitTime);
+            ui.ShowTutorial(type, tutorialHeaderText, tutorialBodyText, waitTime);
         }
     }
 }
