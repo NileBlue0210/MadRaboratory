@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IInteractable
+{
+    ObjectData GetInteractableInfo();
+}
+
 public class XRPlayerCondition : MonoBehaviour
 {
     [Header("Player Status")]
@@ -15,6 +20,10 @@ public class XRPlayerCondition : MonoBehaviour
     public Condition healthBar;
     public Condition staminaBar;
     private bool isDead = false;
+
+    [Header("Player Condition Events")]
+    private Coroutine lowHpWarningCoroutine;
+    private bool isLowHpWarningActive = false;
 
 
     public event Action OnTakeDamage;
@@ -50,6 +59,14 @@ public class XRPlayerCondition : MonoBehaviour
         healthBar.curValue = health;
         staminaBar.curValue = Stamina;
 
+        if (health <= 30 && !isLowHpWarningActive)
+        {
+            lowHpWarningCoroutine = StartCoroutine(PlayLowHpWarning());
+            isLowHpWarningActive = true;
+
+            SoundManager.Instance?.SetBGMVolume(0.05f);
+        }
+
         // 스테미너 관리
         StaminaAmountOfChange();
     }
@@ -59,6 +76,15 @@ public class XRPlayerCondition : MonoBehaviour
         health -= damage;
         health = Mathf.Clamp(health, 0, 100);
         OnTakeDamage?.Invoke();
+    }
+
+    private IEnumerator PlayLowHpWarning()
+    {
+        while (true)
+        {
+            SoundManager.Instance.PlayDamageSound(); // ��� �ݺ������� ����� ���� ���
+            yield return new WaitForSeconds(1.5f); // 1.5�� ���� (���ϸ� �� ª��/��� ���� ����)
+        }
     }
 
     private void StaminaAmountOfChange()

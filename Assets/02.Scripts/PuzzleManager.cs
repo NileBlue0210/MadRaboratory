@@ -133,14 +133,12 @@ public class PuzzleManager : MonoBehaviour
         door.ActivateBeacon();
         // CharacterManager.Instance.Player.controller.SetPuzzleActive(false);
         SceneManager.UnloadSceneAsync("PuzzleScene");
-        Debug.Log("���� Ŭ����! ���� �����ϴ�.");
-
         SoundManager.Instance?.PlaySFX("doorOpenSound");
     }
 
     public void GoBack()
     {
-        CharacterManager.Instance.Player.controller.SetPuzzleActive(false);
+        PlayerManager.Instance.Player.Controller.SetPuzzleActive(false);
         SceneManager.UnloadSceneAsync("PuzzleScene");
     }
 

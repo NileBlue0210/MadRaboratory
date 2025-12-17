@@ -33,7 +33,6 @@ public class EnvironmentalHazard : MonoBehaviour
         {
             effectValue = 2.0f;
             player.MoveProvider.moveSpeed /= effectValue;
-            Debug.Log($"플레이어 속도 감소 : {player.MoveProvider.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
@@ -41,6 +40,7 @@ public class EnvironmentalHazard : MonoBehaviour
             {
                 StopCoroutine(poisoning);
             }
+
             effectValue = 1.0f;
             poisoning = StartCoroutine(Poisoning((int)effectValue));
         }
@@ -50,6 +50,7 @@ public class EnvironmentalHazard : MonoBehaviour
             {
                 StopCoroutine(deepPoisoning);
             }
+
             effectValue = 2.0f;
             deepPoisoning = StartCoroutine(Poisoning((int)effectValue));
         }
@@ -60,12 +61,10 @@ public class EnvironmentalHazard : MonoBehaviour
         if (type == HazardType.SLOWING_LIQUID)
         {
             player.MoveProvider.moveSpeed = oriSpeed;
-            Debug.Log($"플레이어 속도 정상화 : {player.MoveProvider.moveSpeed}");
         }
         else if (type == HazardType.POISON_GAS_AREA)
         {
             StopCoroutine(poisoning);
-            Debug.Log($"중독 지역 탈출! 현재 플레이어 체력 : {player.Condition.health}");
         }
         else if (type == HazardType.POISON_POOL)
         {
@@ -77,7 +76,6 @@ public class EnvironmentalHazard : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log($"{damage}의 중독 데미지!");
             PlayerManager.Instance.Player.Condition.TakePhysicalDamage(damage);
             yield return new WaitForSeconds(2);
         }

@@ -22,6 +22,10 @@ public class XRPlayerController : MonoBehaviour
     public bool IsRun = false;
     public bool DashBlocked = false;
 
+    [Header("Player Control Events")]
+    private Coroutine footstepCoroutine;
+    private bool isPuzzleActive = false;
+
     void Awake()
     {
         xrPlayer = GetComponent<XRPlayer>();
@@ -60,6 +64,9 @@ public class XRPlayerController : MonoBehaviour
         {
             velocityY = -1f;    // 지면에 닿아 있을 때 약간의 음수 값을 줘서 중력 누적 방지
             jumpCount = 0; // 지면에 닿아 있을 때 점프 횟수 초기화
+
+            // 발자국 소리 처리
+            // HandleFootstepSound();
         }
 
         // 중력 적용
@@ -141,4 +148,40 @@ public class XRPlayerController : MonoBehaviour
 
         DashBlocked = false;
     }
+
+    public void SetPuzzleActive(bool active)
+    {
+        isPuzzleActive = active;
+        Cursor.lockState = active ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    // private void HandleFootstepSound()
+    // {
+    //     bool isGrounded = xrPlayer.CharacterController.isGrounded;
+    //     bool isMoving = xrPlayer.MoveProvider.inputVector.magnitude > 0.1f;
+
+    //     if (xrPlayer.CharacterController.isGrounded && isMoving && footstepCoroutine == null)
+    //     {
+    //         footstepCoroutine = StartCoroutine(PlayFootstepsRepeatedly());
+    //     }
+
+    //     if (!isGrounded || !isMoving)
+    //     {
+    //         if (footstepCoroutine != null)
+    //         {
+    //             StopCoroutine(footstepCoroutine);
+    //             footstepCoroutine = null;
+    //         }
+    //     }
+    // }
+
+    // private IEnumerator PlayFootstepsRepeatedly()
+    // {
+    //     while (true)
+    //     {
+    //         SoundManager.Instance?.PlayPlayerFootstep(IsRun);
+
+    //         yield return new WaitForSeconds(IsRun ? 0.3f : 0.5f);
+    //     }
+    // }
 }

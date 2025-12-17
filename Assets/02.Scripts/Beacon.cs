@@ -31,13 +31,13 @@ public class Beacon : MonoBehaviour, IInteractable
         {
             if (ReceiveItem(item))
             {
-                item.OnPlace(); // �������� ���ܿ� ��ġ�Ǿ��� ��, ������ �۵� �޼ҵ� ȣ��
+                item.OnPlace();
                 GameManager.Instance.ReportBeaconActivated(true);
                 ActivateGimmick();
             }
             else
             {
-                Debug.Log("�ùٸ� Ű �������� �ƴմϴ�.");
+                Debug.Log("Invalid Item for this Beacon.");
             }
         }
     }
