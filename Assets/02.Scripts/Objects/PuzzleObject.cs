@@ -23,11 +23,19 @@ public class PuzzleObject : MonoBehaviour
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        LoadPuzzleScene();
+        StartCoroutine(LoadPuzzleScene());
     }
 
-    private void LoadPuzzleScene()
+    private IEnumerator LoadPuzzleScene()
     {
-        SceneManager.LoadScene("PuzzleScene", LoadSceneMode.Additive);
+        // 플레이어 컨트롤 비활성화 후, 퍼즐 씬 로드
+        PlayerManager.Instance.Player.Controller.SetPuzzleActive(false);
+
+        // 씬이 로드된 후 퍼즐 오브젝트 정보를 매니저에 할당
+        yield return SceneManager.LoadSceneAsync("PuzzleScene", LoadSceneMode.Additive);
+        PuzzleManager.Instance.PuzzleObject = gameObject;
+
+        // 퍼즐 설정 코루틴
+        StartCoroutine(PuzzleManager.Instance.SetupPuzzleCoroutine());
     }
 }

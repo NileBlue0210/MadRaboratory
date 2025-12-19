@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRPlayerController : MonoBehaviour
 {
@@ -149,10 +150,31 @@ public class XRPlayerController : MonoBehaviour
         DashBlocked = false;
     }
 
+    /// <summary>
+    /// 퍼즐 씬 로드 시 플레이어 컨트롤 비활성화
+    /// </summary>
+    /// <param name="active"></param>
     public void SetPuzzleActive(bool active)
     {
         isPuzzleActive = active;
         Cursor.lockState = active ? CursorLockMode.None : CursorLockMode.Locked;
+
+        // 플레이어 움직임 비활성화
+        if (xrPlayer.MoveProvider != null)
+        {
+            xrPlayer.MoveProvider.enabled = active;
+        }
+        
+        ActionBasedContinuousTurnProvider turnProvider = xrPlayer.GetComponent<ActionBasedContinuousTurnProvider>();
+
+        // 플레이어 회전 비활성화
+        if (turnProvider != null)
+        {
+            turnProvider.enabled = active;
+        }
+
+        // 플레이어 조작 비활성화
+        this.enabled = active;
     }
 
     // private void HandleFootstepSound()

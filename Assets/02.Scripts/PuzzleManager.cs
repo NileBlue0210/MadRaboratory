@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,11 +21,13 @@ public class PuzzleManager : MonoBehaviour
 
     private bool isClear = false;
 
-    public PuzzleLight[] getPuzzles; // PuzzleLight�� ������ �ִ� �ڽ� ������Ʈ�� ��� ���� �迭
+    public PuzzleLight[] getPuzzles;
 
-    public PuzzleLight[,] puzzles = new PuzzleLight[5,5]; // �� �迭 ���� ������Ʈ�� ������ ���·� ��� ���� �迭
+    public PuzzleLight[,] puzzles = new PuzzleLight[5,5];
 
     public Door door;
+
+    public GameObject PuzzleObject;
 
     private void Awake()
     {
@@ -39,9 +40,7 @@ public class PuzzleManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        getPuzzles = GetComponentsInChildren<PuzzleLight>(); // ó������ 2���� �迭�� ���� �� ���� �켱 1���� �迭�� �Ҵ�
-
-        
+        getPuzzles = GetComponentsInChildren<PuzzleLight>();
     }
 
     private void Start()
@@ -50,7 +49,7 @@ public class PuzzleManager : MonoBehaviour
         Cursor.visible = true;
 
         int k = 0;
-        // 1���� �迭�� ��� �ڽĵ�(����Ʈ)�� 2���� �迭�� �ű�
+
         for (int i = 0; i< 5; i++)
         {
             for (int j = 0; j < 5; j++)
@@ -69,15 +68,14 @@ public class PuzzleManager : MonoBehaviour
     }
 
 
-    public void TurnSideLights(PuzzleLight puzzle) // Ŭ���� ����Ʈ�� �翷 �� ���Ʒ��� Ű�ų� ���� �޼���
+    public void TurnSideLights(PuzzleLight puzzle)
     {
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
             {
-                if (puzzles[i, j] == puzzle) // Ŭ���� ������ ��ġ�� ã��
+                if (puzzles[i, j] == puzzle)
                 {
-                    // Ŭ���� ������ �翷 �� ���Ʒ��� ����Ʈ�� ���� ��� ���ų� Ŵ
                     TurnOnOff(i + 1, j);
                     TurnOnOff(i - 1, j);
                     TurnOnOff(i , j + 1);
@@ -87,7 +85,7 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    void TurnOnOff(int i, int j) // ����Ʈ �¿��� ��� �޼���
+    void TurnOnOff(int i, int j)
     {
         if(i >= 0 && i < 5 && j >= 0 && j < 5)
         {
@@ -98,7 +96,7 @@ public class PuzzleManager : MonoBehaviour
     }
 
 
-    public bool CheckPuzzleClear() // ���� Ŭ���� �޼���
+    public bool CheckPuzzleClear()
     {
         bool isAllOn = true;
 
@@ -106,7 +104,6 @@ public class PuzzleManager : MonoBehaviour
         {
             for (int j = 0; j < 5; j++)
             {
-                // ����Ʈ�� �ϳ��� ���������� Ŭ���� �ȵ� ����
                 if (puzzles[i, j].isLightON == false)
                 {
                     isAllOn = false;
@@ -125,21 +122,34 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    public void ClearedPuzzle() // ������ Ŭ�����ϸ� ���� ������ �޼���
+    public void ClearedPuzzle()
     {
         isClear = true;
-        GameManager.Instance.PuzzleSolved("GasRoom_Puzzle1"); // ���� Ŭ���� ���¸� GameManager�� �˸�
+        GameManager.Instance.PuzzleSolved("GasRoom_Puzzle1");
+
         door = GameManager.Instance.door1Object.GetComponent<Door>();
         door.ActivateBeacon();
-        // CharacterManager.Instance.Player.controller.SetPuzzleActive(false);
+
         SceneManager.UnloadSceneAsync("PuzzleScene");
         SoundManager.Instance?.PlaySFX("doorOpenSound");
+
+        PlayerManager.Instance.Player.Controller.SetPuzzleActive(true); // 플레이어 컨트롤러 활성화
+
     }
 
     public void GoBack()
     {
-        PlayerManager.Instance.Player.Controller.SetPuzzleActive(false);
         SceneManager.UnloadSceneAsync("PuzzleScene");
+        PlayerManager.Instance.Player.Controller.SetPuzzleActive(true); // 플레이어 컨트롤러 활성화
     }
 
+    public IEnumerator SetupPuzzleCoroutine()
+    {
+        // 씬이 완전히 로드될 때까지 대기
+        yield return new WaitUntil(() => SceneManager.GetSceneByName("PuzzleScene").isLoaded);
+
+        XRPlayer player = PlayerManager.Instance.Player;
+        // player.transform.position = PuzzleObject.transform.position;
+        // player.transform.rotation = PuzzleObject.transform.rotation;
+    }
 }
