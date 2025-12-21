@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2875251}
   - component: {fileID: 2875253}
   - component: {fileID: 2875252}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 20325074}
   - component: {fileID: 20325076}
   - component: {fileID: 20325075}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 30856445}
   - component: {fileID: 30856447}
   - component: {fileID: 30856446}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 40576528}
   - component: {fileID: 40576530}
   - component: {fileID: 40576529}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 109100635}
   - component: {fileID: 109100637}
   - component: {fileID: 109100636}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 117646691}
   - component: {fileID: 117646693}
   - component: {fileID: 117646692}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 123678640}
   - component: {fileID: 123678642}
   - component: {fileID: 123678641}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 131265719}
   - component: {fileID: 131265721}
   - component: {fileID: 131265720}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 177933971}
   - component: {fileID: 177933973}
   - component: {fileID: 177933972}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,85 +1121,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177933970}
   m_CullTransparentMesh: 1
---- !u!1 &188453345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 188453348}
-  - component: {fileID: 188453347}
-  - component: {fileID: 188453349}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &188453347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188453345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &188453348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188453345}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &188453349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188453345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
-  m_ScrollDeltaPerTick: 6
 --- !u!1 &197792178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1184,7 @@ GameObject:
   - component: {fileID: 216539075}
   - component: {fileID: 216539077}
   - component: {fileID: 216539076}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1259,7 @@ GameObject:
   - component: {fileID: 220330046}
   - component: {fileID: 220330048}
   - component: {fileID: 220330047}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,7 +1414,7 @@ GameObject:
   - component: {fileID: 224548621}
   - component: {fileID: 224548623}
   - component: {fileID: 224548622}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1541,7 @@ GameObject:
   - component: {fileID: 253517780}
   - component: {fileID: 253517782}
   - component: {fileID: 253517781}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1616,7 @@ GameObject:
   - component: {fileID: 257441712}
   - component: {fileID: 257441714}
   - component: {fileID: 257441713}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,7 +1743,7 @@ GameObject:
   - component: {fileID: 320479429}
   - component: {fileID: 320479431}
   - component: {fileID: 320479430}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1818,7 @@ GameObject:
   - component: {fileID: 324603691}
   - component: {fileID: 324603693}
   - component: {fileID: 324603692}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +1893,7 @@ GameObject:
   - component: {fileID: 352858911}
   - component: {fileID: 352858913}
   - component: {fileID: 352858912}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2047,7 +1968,7 @@ GameObject:
   - component: {fileID: 355243696}
   - component: {fileID: 355243698}
   - component: {fileID: 355243697}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2122,7 +2043,7 @@ GameObject:
   - component: {fileID: 357687540}
   - component: {fileID: 357687542}
   - component: {fileID: 357687541}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2118,7 @@ GameObject:
   - component: {fileID: 361738743}
   - component: {fileID: 361738745}
   - component: {fileID: 361738744}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2272,7 +2193,7 @@ GameObject:
   - component: {fileID: 379795024}
   - component: {fileID: 379795026}
   - component: {fileID: 379795025}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2427,7 +2348,7 @@ GameObject:
   - component: {fileID: 395054286}
   - component: {fileID: 395054288}
   - component: {fileID: 395054287}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2502,7 +2423,7 @@ GameObject:
   - component: {fileID: 399207175}
   - component: {fileID: 399207177}
   - component: {fileID: 399207176}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2605,7 +2526,7 @@ GameObject:
   - component: {fileID: 438234926}
   - component: {fileID: 438234928}
   - component: {fileID: 438234927}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2708,7 +2629,7 @@ GameObject:
   - component: {fileID: 485385667}
   - component: {fileID: 485385669}
   - component: {fileID: 485385668}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2783,7 +2704,7 @@ GameObject:
   - component: {fileID: 497891132}
   - component: {fileID: 497891134}
   - component: {fileID: 497891133}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2886,7 +2807,7 @@ GameObject:
   - component: {fileID: 544488970}
   - component: {fileID: 544488972}
   - component: {fileID: 544488971}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3041,7 +2962,7 @@ GameObject:
   - component: {fileID: 590209526}
   - component: {fileID: 590209528}
   - component: {fileID: 590209527}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,7 +3116,7 @@ GameObject:
   - component: {fileID: 626361600}
   - component: {fileID: 626361602}
   - component: {fileID: 626361601}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3270,7 +3191,7 @@ GameObject:
   - component: {fileID: 631618667}
   - component: {fileID: 631618669}
   - component: {fileID: 631618668}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3345,7 +3266,7 @@ GameObject:
   - component: {fileID: 632902673}
   - component: {fileID: 632902675}
   - component: {fileID: 632902674}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3420,7 +3341,7 @@ GameObject:
   - component: {fileID: 634433206}
   - component: {fileID: 634433208}
   - component: {fileID: 634433207}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3523,7 +3444,7 @@ GameObject:
   - component: {fileID: 650723345}
   - component: {fileID: 650723347}
   - component: {fileID: 650723346}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3598,7 +3519,7 @@ GameObject:
   - component: {fileID: 654982765}
   - component: {fileID: 654982767}
   - component: {fileID: 654982766}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3725,7 +3646,7 @@ GameObject:
   - component: {fileID: 680333762}
   - component: {fileID: 680333764}
   - component: {fileID: 680333763}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3800,7 +3721,7 @@ GameObject:
   - component: {fileID: 720194781}
   - component: {fileID: 720194783}
   - component: {fileID: 720194782}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3875,7 +3796,7 @@ GameObject:
   - component: {fileID: 724722632}
   - component: {fileID: 724722634}
   - component: {fileID: 724722633}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +3871,7 @@ GameObject:
   - component: {fileID: 739261265}
   - component: {fileID: 739261267}
   - component: {fileID: 739261266}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4026,7 +3947,7 @@ GameObject:
   - component: {fileID: 754400275}
   - component: {fileID: 754400274}
   - component: {fileID: 754400273}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: GoBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4097,7 +4018,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1491354698}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
         m_MethodName: GoBack
         m_Mode: 1
@@ -4158,7 +4079,7 @@ GameObject:
   - component: {fileID: 787658322}
   - component: {fileID: 787658324}
   - component: {fileID: 787658323}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4233,7 +4154,7 @@ GameObject:
   - component: {fileID: 787695792}
   - component: {fileID: 787695794}
   - component: {fileID: 787695793}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4308,7 +4229,7 @@ GameObject:
   - component: {fileID: 825711949}
   - component: {fileID: 825711951}
   - component: {fileID: 825711950}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4383,7 +4304,7 @@ GameObject:
   - component: {fileID: 856987806}
   - component: {fileID: 856987808}
   - component: {fileID: 856987807}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4458,7 +4379,7 @@ GameObject:
   - component: {fileID: 869294804}
   - component: {fileID: 869294806}
   - component: {fileID: 869294805}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4585,7 +4506,7 @@ GameObject:
   - component: {fileID: 899573971}
   - component: {fileID: 899573973}
   - component: {fileID: 899573972}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4688,7 +4609,7 @@ GameObject:
   - component: {fileID: 944498146}
   - component: {fileID: 944498148}
   - component: {fileID: 944498147}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4684,7 @@ GameObject:
   - component: {fileID: 998778832}
   - component: {fileID: 998778834}
   - component: {fileID: 998778833}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,7 +4811,7 @@ GameObject:
   - component: {fileID: 1104124857}
   - component: {fileID: 1104124859}
   - component: {fileID: 1104124858}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4965,7 +4886,7 @@ GameObject:
   - component: {fileID: 1127894688}
   - component: {fileID: 1127894690}
   - component: {fileID: 1127894689}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5068,7 +4989,7 @@ GameObject:
   - component: {fileID: 1190381832}
   - component: {fileID: 1190381834}
   - component: {fileID: 1190381833}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5219,6 +5140,7 @@ GameObject:
   - component: {fileID: 1195941644}
   - component: {fileID: 1195941643}
   - component: {fileID: 1195941642}
+  - component: {fileID: 1195941646}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5265,7 +5187,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1195941644
 Canvas:
   m_ObjectHideFlags: 0
@@ -5275,7 +5197,7 @@ Canvas:
   m_GameObject: {fileID: 1195941641}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -5297,8 +5219,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195941641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1191470854}
@@ -5310,8 +5232,24 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1195941646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195941641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793f9127bf1bb3843a8a39f82103108e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPuzzles: []
+  Door: {fileID: 0}
+  puzzleObject: {fileID: 0}
+  isPuzzleActive: 0
 --- !u!1 &1203775298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5323,7 +5261,7 @@ GameObject:
   - component: {fileID: 1203775299}
   - component: {fileID: 1203775301}
   - component: {fileID: 1203775300}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5398,7 +5336,7 @@ GameObject:
   - component: {fileID: 1242173597}
   - component: {fileID: 1242173599}
   - component: {fileID: 1242173598}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5473,7 +5411,7 @@ GameObject:
   - component: {fileID: 1255461675}
   - component: {fileID: 1255461677}
   - component: {fileID: 1255461676}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5576,7 +5514,7 @@ GameObject:
   - component: {fileID: 1270573064}
   - component: {fileID: 1270573066}
   - component: {fileID: 1270573065}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5679,7 +5617,7 @@ GameObject:
   - component: {fileID: 1303951094}
   - component: {fileID: 1303951096}
   - component: {fileID: 1303951095}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5806,7 +5744,7 @@ GameObject:
   - component: {fileID: 1325591086}
   - component: {fileID: 1325591088}
   - component: {fileID: 1325591087}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5985,7 +5923,7 @@ GameObject:
   - component: {fileID: 1389885062}
   - component: {fileID: 1389885064}
   - component: {fileID: 1389885063}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6140,7 +6078,7 @@ GameObject:
   - component: {fileID: 1416955724}
   - component: {fileID: 1416955726}
   - component: {fileID: 1416955725}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6319,7 +6257,7 @@ GameObject:
   - component: {fileID: 1438946360}
   - component: {fileID: 1438946362}
   - component: {fileID: 1438946361}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6422,7 +6360,7 @@ GameObject:
   - component: {fileID: 1441798296}
   - component: {fileID: 1441798298}
   - component: {fileID: 1441798297}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6598,7 +6536,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491354697}
-  - component: {fileID: 1491354698}
   m_Layer: 5
   m_Name: Puzzle
   m_TagString: Untagged
@@ -6650,21 +6587,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1491354698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491354696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793f9127bf1bb3843a8a39f82103108e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getPuzzles: []
-  door: {fileID: 0}
-  PuzzleObject: {fileID: 0}
 --- !u!1 &1526529222
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,7 +6806,7 @@ GameObject:
   - component: {fileID: 1737766773}
   - component: {fileID: 1737766775}
   - component: {fileID: 1737766774}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6959,7 +6881,7 @@ GameObject:
   - component: {fileID: 1760871214}
   - component: {fileID: 1760871216}
   - component: {fileID: 1760871215}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7034,7 +6956,7 @@ GameObject:
   - component: {fileID: 1793187757}
   - component: {fileID: 1793187759}
   - component: {fileID: 1793187758}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7109,7 +7031,7 @@ GameObject:
   - component: {fileID: 1799294505}
   - component: {fileID: 1799294507}
   - component: {fileID: 1799294506}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7212,7 +7134,7 @@ GameObject:
   - component: {fileID: 1802612494}
   - component: {fileID: 1802612496}
   - component: {fileID: 1802612495}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7287,7 +7209,7 @@ GameObject:
   - component: {fileID: 1827652163}
   - component: {fileID: 1827652165}
   - component: {fileID: 1827652164}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7362,7 +7284,7 @@ GameObject:
   - component: {fileID: 1830135008}
   - component: {fileID: 1830135010}
   - component: {fileID: 1830135009}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7489,7 +7411,7 @@ GameObject:
   - component: {fileID: 1850537229}
   - component: {fileID: 1850537233}
   - component: {fileID: 1850537231}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7592,7 +7514,7 @@ GameObject:
   - component: {fileID: 1850614295}
   - component: {fileID: 1850614297}
   - component: {fileID: 1850614296}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7667,7 +7589,7 @@ GameObject:
   - component: {fileID: 1870130270}
   - component: {fileID: 1870130272}
   - component: {fileID: 1870130271}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7770,7 +7692,7 @@ GameObject:
   - component: {fileID: 1878565530}
   - component: {fileID: 1878565532}
   - component: {fileID: 1878565531}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7845,7 +7767,7 @@ GameObject:
   - component: {fileID: 1886277159}
   - component: {fileID: 1886277161}
   - component: {fileID: 1886277160}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7948,7 +7870,7 @@ GameObject:
   - component: {fileID: 1927835313}
   - component: {fileID: 1927835315}
   - component: {fileID: 1927835314}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8103,7 +8025,7 @@ GameObject:
   - component: {fileID: 1993036941}
   - component: {fileID: 1993036943}
   - component: {fileID: 1993036942}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8230,7 +8152,7 @@ GameObject:
   - component: {fileID: 2064875346}
   - component: {fileID: 2064875348}
   - component: {fileID: 2064875347}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8305,7 +8227,7 @@ GameObject:
   - component: {fileID: 2089431005}
   - component: {fileID: 2089431007}
   - component: {fileID: 2089431006}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: LIghtOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8374,4 +8296,3 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1195941645}
-  - {fileID: 188453348}

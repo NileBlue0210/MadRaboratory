@@ -25,9 +25,10 @@ public class PuzzleManager : MonoBehaviour
 
     public PuzzleLight[,] puzzles = new PuzzleLight[5,5];
 
-    public Door door;
+    [HideInInspector] public Door Door;
 
-    public GameObject PuzzleObject;
+    [HideInInspector] public PuzzleObject puzzleObject;
+    public bool isPuzzleActive = false;
 
     private void Awake()
     {
@@ -127,29 +128,20 @@ public class PuzzleManager : MonoBehaviour
         isClear = true;
         GameManager.Instance.PuzzleSolved("GasRoom_Puzzle1");
 
-        door = GameManager.Instance.door1Object.GetComponent<Door>();
-        door.ActivateBeacon();
+        Door = GameManager.Instance.door1Object.GetComponent<Door>();
+        Door.ActivateBeacon();
 
         SceneManager.UnloadSceneAsync("PuzzleScene");
         SoundManager.Instance?.PlaySFX("doorOpenSound");
 
         PlayerManager.Instance.Player.Controller.SetPuzzleActive(true); // 플레이어 컨트롤러 활성화
-
+        puzzleObject.ResetEvent();
     }
 
     public void GoBack()
     {
         SceneManager.UnloadSceneAsync("PuzzleScene");
         PlayerManager.Instance.Player.Controller.SetPuzzleActive(true); // 플레이어 컨트롤러 활성화
-    }
-
-    public IEnumerator SetupPuzzleCoroutine()
-    {
-        // 씬이 완전히 로드될 때까지 대기
-        yield return new WaitUntil(() => SceneManager.GetSceneByName("PuzzleScene").isLoaded);
-
-        XRPlayer player = PlayerManager.Instance.Player;
-        // player.transform.position = PuzzleObject.transform.position;
-        // player.transform.rotation = PuzzleObject.transform.rotation;
+        puzzleObject.ResetEvent();
     }
 }
