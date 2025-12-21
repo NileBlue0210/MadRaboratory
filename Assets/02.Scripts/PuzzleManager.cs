@@ -29,6 +29,7 @@ public class PuzzleManager : MonoBehaviour
 
     [HideInInspector] public PuzzleObject puzzleObject;
     public bool isPuzzleActive = false;
+    private Canvas puzzleCanvas;
 
     private void Awake()
     {
@@ -42,6 +43,12 @@ public class PuzzleManager : MonoBehaviour
         }
 
         getPuzzles = GetComponentsInChildren<PuzzleLight>();
+        puzzleCanvas = GetComponent<Canvas>();
+
+        if (puzzleCanvas != null)
+        {
+            puzzleCanvas.worldCamera = Camera.main; // 이벤트 카메라를 메인 카메라로 설정
+        }
     }
 
     private void Start()
